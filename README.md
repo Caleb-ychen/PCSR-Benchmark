@@ -6,7 +6,7 @@ Code release for Beyond Localization: A Comprehensive Benchmark of Perspective-C
 # Paper Title: Beyond Localization: A Comprehensive Benchmark of Perspective-Conditioned Spatial Reasoning in MLLMs from Omnidirectional Images
 ## A Comprehensive Benchmark of Perspective-Conditioned Spatial Reasoning
 
-<img src="docs/resources/fig1.svg" width="70%"/>
+<img src="docs/resources/fig1.svg" width="90%"/>
 
 <br>
 
