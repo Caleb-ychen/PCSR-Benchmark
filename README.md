@@ -3,7 +3,7 @@ Code release for Beyond Localization: A Comprehensive Benchmark of Perspective-C
 
 <div align="center">
 
-# Paper Title: Beyond Localization: A Comprehensive Benchmark of Perspective-Conditioned Spatial Reasoning in MLLMs from Omnidirectional Images
+# Beyond Localization: A Comprehensive Benchmark of Perspective-Conditioned Spatial Reasoning in MLLMs from Omnidirectional Images
 ## A Comprehensive Benchmark of Perspective-Conditioned Spatial Reasoning
 
 <img src="docs/resources/fig1.svg" width="90%"/>
@@ -15,28 +15,31 @@ Code release for Beyond Localization: A Comprehensive Benchmark of Perspective-C
 [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/your-dataset)
 [![Code](https://img.shields.io/badge/Code-GitHub-black?logo=github)](https://github.com/yourname/yourrepo)
 
-**Author A**<sup>1*</sup>, **Author B**<sup>2*</sup>, **Author C**<sup>1</sup>, **Author D**<sup>3</sup>
+**Yuangong Chen**<sup>1</sup>,
+**Wai Keung Wong**<sup>1†</sup>,
+**Jiaxing Li**<sup>2</sup>,
+**Ioannis Patras**<sup>3</sup>,
+**Xu Zheng**<sup>4</sup>
 
-<sup>1</sup>University A &emsp;
-<sup>2</sup>University B &emsp;
-<sup>3</sup>Institute C
+<sup>1</sup>The Hong Kong Polytechnic University, Hong Kong SAR, China &emsp;
+<sup>2</sup>Guangzhou University, Guangzhou, China &emsp;
+<sup>3</sup>Queen Mary, University of London, London, United Kingdom &emsp;
+<sup>4</sup>Great Bay University, Dongguan, China
+
+<br>
+<sup>†</sup>Corresponding author
 
 </div>
 
-<img src="assets/teaser.png" width="100%"/>
 
-> We study xxx. Existing methods suffer from xxx. To address this, we propose xxx, a new benchmark / method / framework that enables xxx.
-
----
 
 ## News
-- `2026-07-30` Release code and README.
-- `2026-07-10` Release benchmark.
-- `2026-06-01` Paper accepted by XXX.
+- `2026-07-30` Release evaluation code and benchmark.
+- `2026-07-10` Paper accepted by ACM MM 2026.
 
 ## Contents
 - [Overview](#overview)
-- [Dataset](#dataset)
+- [Benchmark](#benchmark)
 - [Method](#method)
 - [Results](#results)
 - [Quick Start](#quick-start)
@@ -54,35 +57,17 @@ Code release for Beyond Localization: A Comprehensive Benchmark of Perspective-C
 
 <img src="assets/overview.png" width="100%"/>
 
-## Dataset
-Our dataset contains:
-- xxx samples
-- xxx categories
-- xxx tasks
+## Benchmark
+ we introduce PCSR-Bench, a benchmark designed to test whether models can recompute spatial relations under changed observer conditions.
 
-<img src="assets/dataset_stats.png" width="100%"/>
-
-## Method
-We propose xxx, which consists of:
-1. xxx
-2. xxx
-3. xxx
-
-<img src="assets/method.png" width="100%"/>
+<img src="docs/resources/benchmark_generation_pipeline-v4.svg" width="100%"/>
 
 ## Results
 We evaluate on xxx under xxx setting.
 
-<img src="assets/results_main.png" width="100%"/>
+<img src="docs/resources/table1.png" width="70%"/>
 
-### Key Findings
-- Finding 1
-- Finding 2
-- Finding 3
-
-## Quick Start
-
-### Load dataset
+## Evaluation
 ```python
 from datasets import load_dataset
 dataset = load_dataset("your-name/your-dataset")
