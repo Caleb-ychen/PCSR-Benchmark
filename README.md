@@ -37,6 +37,17 @@ Code release for Beyond Localization: A Comprehensive Benchmark of Perspective-C
 - `2026-07-30` Release evaluation code and benchmark.
 - `2026-07-10` Paper accepted by ACM MM 2026.
 
+## 📖 Abstract
+
+Understanding spatial relationships from omnidirectional (360°) images is a fundamental challenge for Multimodal Large Language Models (MLLMs), yet existing benchmarks largely focus on object localization while overlooking the **perspective-conditioned** nature of spatial reasoning. In this work, we introduce **PCSR-Benchmark**, a comprehensive benchmark designed to evaluate MLLMs on perspective-conditioned spatial reasoning tasks from omnidirectional images. Our benchmark covers *(1)* egocentric and allocentric reasoning, *(2)* multi-view consistency, and *(3)* fine-grained relational understanding across diverse indoor and outdoor scenes. We evaluate a wide range of state-of-the-art open-source and proprietary MLLMs, revealing that current models exhibit substantial limitations when reasoning beyond simple localization. We further provide detailed analyses on failure modes and propose insights for developing next-generation spatially-aware MLLMs. We hope PCSR-Benchmark will serve as a rigorous testbed to advance research on spatial reasoning in omnidirectional visual understanding.
+
+<!-- Optional: teaser figure under abstract -->
+<p align="center">
+  <img src="docs/resources/abstract_teaser.svg" width="85%"/>
+</p>
+
+
+
 ## Contents
 - [Overview](#overview)
 - [Benchmark](#benchmark)
