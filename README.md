@@ -16,7 +16,7 @@ Code release for Beyond Localization: A Comprehensive Benchmark of Perspective-C
 [![Code](https://img.shields.io/badge/Code-GitHub-black?logo=github)](https://github.com/yourname/yourrepo)
 
 **Yuangong Chen**<sup>1</sup>,
-**Wai Keung Wong**<sup>1†</sup>,
+**Waikeung Wong**<sup>1†</sup>,
 **Jiaxing Li**<sup>2</sup>,
 **Ioannis Patras**<sup>3</sup>,
 **Xu Zheng**<sup>4</sup>
