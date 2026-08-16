@@ -1,0 +1,170 @@
+# ================================================================
+# OMM-Bench model registry — every key maps to one of the original
+# bench_v12_hotfix15 scripts. Fields are the ONLY per-model differences.
+# ================================================================
+
+# ---------------- lmdeploy TurboMind family ----------------
+qwen2_5_vl_7b:
+  backend: lmdeploy_pipe
+  model_path: /root/autodl-tmp/Models/Qwen2.5-VL-7B-Instruct
+  output_file: /root/autodl-tmp/Qwen2_5_VL_7B_Instruct_v12.json
+  eval_mode: Qwen2_5_VL_7B_Instruct
+  decoding: hard_greedy_v12_cot
+  desc: Qwen2_5_VL_7B_Instruct
+  batch_size: 1
+  tp: 1
+
+qwen2_5_vl_72b:
+  backend: lmdeploy_pipe
+  model_path: /root/autodl-tmp/Models/Qwen2.5-VL-72B-Instruct
+  output_file: /root/autodl-tmp/Qwen2_5_VL_72B_Instruct_v12.json
+  eval_mode: Qwen2_5_VL_72B_Instruct
+  decoding: hard_greedy_v12_cot
+  desc: Qwen2_5_VL_72B_Instruct
+  batch_size: 1
+  tp: 4
+
+qwen3_vl_8b:
+  backend: lmdeploy_pipe
+  model_path: /root/autodl-tmp/Qwen3-VL-8B-Instruct
+  output_file: /root/autodl-tmp/Qwen3_VL_8B_Instruct_v12.json
+  eval_mode: Qwen3_VL_8B_Instruct
+  decoding: hard_greedy_v12_cot
+  desc: Qwen3_VL_8B_Instruct
+  batch_size: 1
+  tp: 1
+
+qwen3_vl_32b:
+  backend: lmdeploy_pipe
+  model_path: /root/autodl-tmp/Qwen3-VL-32B-Instruct
+  output_file: /root/autodl-tmp/Qwen3_VL_32B_Instruct_v12.json
+  eval_mode: Qwen3_VL_32B_Instruct
+  decoding: hard_greedy_v12_cot
+  desc: Qwen3_VL_32B_Instruct
+  batch_size: 1
+  tp: 2
+
+internvl2_5_8b:
+  backend: lmdeploy_pipe
+  model_path: /root/autodl-tmp/InternVL2_5-8B
+  output_file: /root/autodl-tmp/InternVL2_5_8B_v12.json
+  eval_mode: InternVL2_5_8B
+  decoding: hard_greedy_v12_cot
+  desc: InternVL2_5_8B
+  batch_size: 1
+  tp: 1
+
+internvl2_5_38b:
+  backend: lmdeploy_pipe
+  model_path: /root/autodl-tmp/InternVL2_5-38B
+  output_file: /root/autodl-tmp/InternVL2_5_38B_v12.json
+  eval_mode: InternVL2_5_38B
+  decoding: hard_greedy_v12_cot
+  desc: InternVL2_5_38B
+  batch_size: 1
+  tp: 2
+
+internvl2_5_78b:
+  backend: lmdeploy_pipe
+  model_path: /root/autodl-tmp/InternVL2_5-78B
+  output_file: /root/autodl-tmp/InternVL2_5_78B_v12.json
+  eval_mode: InternVL2_5_78B
+  decoding: hard_greedy_v12_cot
+  desc: InternVL2_5_78B
+  batch_size: 1
+  tp: 4
+
+internvl3_5_8b:
+  backend: lmdeploy_pipe
+  model_path: /root/autodl-tmp/InternVL3_5-8B
+  output_file: /root/autodl-tmp/InternVL3_5_8B_v12.json
+  eval_mode: InternVL3_5_8B
+  decoding: hard_greedy_v12_cot
+  desc: InternVL3_5_8B
+  batch_size: 1
+  tp: 1
+
+internvl3_5_38b:
+  backend: lmdeploy_pipe
+  model_path: /root/autodl-tmp/InternVL3_5-38B
+  output_file: /root/autodl-tmp/InternVL3_5_38B_v12.json
+  eval_mode: InternVL3_5_38B
+  decoding: hard_greedy_v12_cot
+  desc: InternVL3_5_38B
+  batch_size: 1
+  tp: 2
+
+minicpm_v_2_5:
+  backend: lmdeploy_pipe
+  model_path: /root/autodl-tmp/model/MiniCPM-Llama3-V-2_5
+  output_file: /root/autodl-tmp/MiniCPM_V_2_5_v12.json
+  eval_mode: MiniCPM_V_2_5
+  decoding: hard_greedy_v12_cot
+  desc: MiniCPM_V_2_5
+  batch_size: 1
+  tp: 1
+
+# ---------------- HuggingFace-native family ----------------
+llava_onevision_7b:
+  backend: llava_onevision_hf
+  need_pil: false
+  model_path: /root/autodl-tmp/llava-onevision-qwen2-7b-ov-hf
+  output_file: /root/autodl-tmp/LLaVA_OneVision_7B_v12.json
+  eval_mode: LLaVA_OneVision_7B
+  decoding: hard_greedy_v12_cot
+  desc: LLaVA_OneVision_7B
+  batch_size: 1
+  torch_dtype: bfloat16
+
+# 原 v12: add_bos=true;  hotfix18: 命令行加 --no-bos
+llava_v1_6_7b:
+  backend: llava_next
+  need_pil: true
+  model_path: /root/autodl-tmp/llava-v1.6-vicuna-7b-hf
+  output_file: /root/autodl-tmp/LLaVA_v1_6_7B_v12.json
+  eval_mode: LLaVA_v1_6_7B
+  decoding: hard_greedy_v12_cot
+  desc: LLaVA_v1_6_7B
+  batch_size: 4
+  torch_dtype: float16
+  add_bos: true
+
+# 原 v12: add_bos=true;  hotfix18: 命令行加 --no-bos
+llama_3_2_11b_vision:
+  backend: mllama
+  need_pil: true
+  model_path: /root/autodl-tmp/Llama-3.2-11B-Vision-Instruct
+  output_file: /root/autodl-tmp/Llama_3_2_11B_Vision_Instruct_v12.json
+  eval_mode: Llama_3_2_11B_Vision_Instruct
+  decoding: hard_greedy_v12_cot
+  desc: Llama_3_2_11B
+  batch_size: 4
+  torch_dtype: bfloat16
+  add_bos: true
+
+janus_pro_7b:
+  backend: janus
+  need_pil: true
+  model_path: /root/autodl-tmp/deepseek-ai/Janus-Pro-7B
+  janus_root: /root/autodl-tmp/Janus
+  output_file: /root/autodl-tmp/Janus_Pro_7B_v12.json
+  eval_mode: Janus_Pro_7B
+  decoding: hard_greedy_v12_cot
+  desc: Janus_Pro_7B
+  batch_size: 4
+
+# ---------------- DashScope API family ----------------
+# api_mode = legacy  → 对齐 Qwen_VL_Max_API_v12.py
+# api_mode = fixed   → 对齐 Qwen_VL_Max_API_v12_hotfix18.py（默认）
+# api_mode = openai  → 对齐 hotfix18 中的 OpenAI 兼容端点开关
+qwen_vl_max_api:
+  backend: qwen_vl_max_api
+  need_pil: true
+  cuda_visible: ""
+  output_file: /root/autodl-tmp/Qwen_VL_Max_API_v12.json
+  eval_mode: Qwen_VL_Max
+  decoding: api_greedy_top1_v12_cot
+  desc: Qwen_VL_Max
+  batch_size: 8
+  api_mode: legacy
+  max_img_size: 1024
