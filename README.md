@@ -43,16 +43,6 @@ Understanding spatial relationships from omnidirectional (360°) images is a fun
 
 
 
-## Contents
-- [Overview](#overview)
-- [Benchmark](#benchmark)
-- [Method](#method)
-- [Results](#results)
-- [Quick Start](#quick-start)
-- [Installation](#installation)
-- [Evaluation](#evaluation)
-- [Citation](#citation)
-
 ## Overview
 **Motivation.** Existing work focuses on xxx, but ignores xxx.
 
@@ -79,8 +69,6 @@ Our **PCSR-Benchmark** dataset is hosted on 🤗 **Hugging Face Hub**:
 
 👉 **https://huggingface.co/datasets/Caleb-ychen/PCSR-Benchmark**
 
-You can obtain the dataset in any of the following ways. Choose whichever fits your workflow.
-
 ```bash
 pip install -U datasets
 ```
@@ -101,14 +89,26 @@ After downloading, your local dataset directory should look like:
 
 ```
 data/PCSR-Benchmark/
-├── ReplicaPano_test/                       # 360° panorama images
-│   ├── scene_0001.png
-│   ├── scene_0002.png
-│   └── ...
-├── OMM-Bench_Positive_QA_v1_8_test.json    # QA annotations
-├── metadata.json
+├── data/
+│   ├── data_train_58568.json               # 58,568 training QA pairs
+│   └── data_test_7689.json                 #  7,689 test QA pairs
+├── images/                                 # 7,800 panoramic views across 26 scenes
+│   ├── office_3_000/
+│   │   ├── 00027/
+│   │   │   └── rgb.png
+│   │   ├── 00028/
+│   │   │   └── rgb.png
+│   │   └── ...
+│   ├── office_3_001/
+│   │   └── ...
+│   └── ...                                 # other scene_id folders
 └── README.md
 ```
+
+Each QA sample's `image_path` field is relative to the repository root
+(e.g. `images/office_3_000/00027/rgb.png`), so once the snapshot is placed
+under `./data/PCSR-Benchmark/` the paths can be resolved by simple
+`os.path.join(local_dir, sample["image_path"])`.
 
 
 ## Evaluation
