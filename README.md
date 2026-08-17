@@ -73,6 +73,43 @@ We evaluate on xxx under xxx setting.
 
 <img src="docs/resources/table1.png" width="70%"/>
 
+## Download Dataset
+
+Our **PCSR-Benchmark** dataset is hosted on 🤗 **Hugging Face Hub**:
+
+👉 **https://huggingface.co/datasets/Caleb-ychen/PCSR-Benchmark**
+
+You can obtain the dataset in any of the following ways. Choose whichever fits your workflow.
+
+```bash
+pip install -U datasets
+```
+
+```python
+from datasets import load_dataset
+
+# Load the full benchmark
+dataset = load_dataset(Caleb-ychen/PCSR-Benchmark")
+print(dataset)
+
+# Or load a specific split
+test_set = load_dataset("Caleb-ychen/PCSR-Benchmark", split="test")
+```
+### Expected Directory Layout
+
+After downloading, your local dataset directory should look like:
+
+```
+data/PCSR-Benchmark/
+├── ReplicaPano_test/                       # 360° panorama images
+│   ├── scene_0001.png
+│   ├── scene_0002.png
+│   └── ...
+├── OMM-Bench_Positive_QA_v1_8_test.json    # QA annotations
+├── metadata.json
+└── README.md
+```
+
 
 ## Evaluation
 Load the dataset:
