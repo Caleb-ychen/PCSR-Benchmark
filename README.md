@@ -47,10 +47,100 @@ Understanding spatial relationships from omnidirectional (360°) images is a fun
 <img src="docs/resources/benchmark_generation_pipeline-v4.svg" width="100%"/>
 
 ## Installation
-We evaluate on xxx under xxx setting.
 
-<img src="docs/resources/table1.png" width="70%"/>
+We recommend using a fresh Conda (or `venv`) environment with **Python 3.10+** and a CUDA 12.6 compatible GPU driver (required by `torch==2.7.1+cu126` and `lmdeploy`).
 
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/<your-name>/PCSR-Benchmark.git
+cd PCSR-Benchmark
+```
+
+### 2. Create a virtual environment
+
+<details>
+<summary><b>Option A — Conda (recommended)</b></summary>
+
+```bash
+conda create -n pcsr python=3.10 -y
+conda activate pcsr
+```
+</details>
+
+<details>
+<summary><b>Option B — venv</b></summary>
+
+```bash
+python3.10 -m venv .venv
+source .venv/bin/activate           # Linux / macOS
+# .venv\Scripts\activate            # Windows PowerShell
+```
+</details>
+
+### 3. Install PyTorch with CUDA 12.6
+
+`torch==2.7.1+cu126` is **not** on PyPI's default index, so it must be installed from the official PyTorch wheel index first:
+
+```bash
+pip install --upgrade pip
+pip install torch==2.7.1+cu126 --index-url https://download.pytorch.org/whl/cu126
+```
+
+> ℹ️ If your machine has a different CUDA setup, replace `cu126` with the matching build (e.g. `cu121`, `cu128`, or `cpu`) — but note that our results are reported under CUDA 12.6.
+
+### 4. Install the remaining dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. (Optional) Set API keys for closed-source models
+
+Some backends (e.g. `qwen_vl_max_api`) require a DashScope API key:
+
+```bash
+export DASHSCOPE_API_KEY=sk-xxxxxxxxxxxxxxxx
+```
+
+### 6. Verify the installation
+
+```bash
+python - <<'PY'
+import torch, transformers, datasets, lmdeploy
+print("torch        :", torch.__version__, "| CUDA available:", torch.cuda.is_available())
+print("transformers :", transformers.__version__)
+print("datasets     :", datasets.__version__)
+print("lmdeploy     :", lmdeploy.__version__)
+PY
+```
+
+You should see `CUDA available: True` and the versions listed in `requirements.txt`.
+
+### `requirements.txt`
+
+The exact versions used for all reported experiments:
+
+```text
+dashscope==1.26.7
+datasets==4.0.0
+janus==2.0.0
+lmdeploy==0.11.0
+modelscope==1.32.0
+openai==3.1.0
+openpyxl==3.1.5
+pandas==3.0.5
+Pillow==12.3.0
+PyYAML==6.0.3
+torch==2.7.1+cu126
+tqdm==4.67.1
+transformers==4.57.3
+```
+
+> 📌 Notes
+> - `torch==2.7.1+cu126` must be installed from the PyTorch wheel index (Step 3); `pip install -r requirements.txt` alone will fail on default PyPI.
+> - The original file listed `PyYAML` twice (`6.0.2` and `6.0.3`); we keep only `6.0.3`.
+> - Large models such as InternVL 78B / Qwen 72B require multi-GPU setups — set `--tp` in `run_bench.py` accordingly.
 ## Download Dataset
 
 Our **PCSR-Benchmark** dataset is hosted on 🤗 **Hugging Face Hub**:
@@ -104,7 +194,7 @@ Load the dataset:
 
 ```python
 from datasets import load_dataset
-dataset = load_dataset("your-name/your-dataset")
+dataset = load_dataset("Caleb-ychen/PCSR-Benchmark")
 print(dataset)
 ```
 
