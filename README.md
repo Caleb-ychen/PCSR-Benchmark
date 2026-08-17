@@ -41,16 +41,6 @@ Understanding spatial relationships from omnidirectional (360°) images is a fun
 
 
 
-## Overview
-**Motivation.** Existing work focuses on xxx, but ignores xxx.
-
-**Our contribution.**
-- We introduce ...
-- We benchmark ...
-- We show ...
-
-<img src="assets/overview.png" width="100%"/>
-
 ## Benchmark
  we introduce PCSR-Bench, a benchmark designed to test whether models can recompute spatial relations under changed observer conditions.
 
