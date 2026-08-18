@@ -2,7 +2,7 @@
 <div align="center">
 
 # Beyond Localization: A Comprehensive Benchmark of Perspective-Conditioned Spatial Reasoning in MLLMs from Omnidirectional Images
-## A Comprehensive Benchmark of Perspective-Conditioned Spatial Reasoning
+## A Comprehensive Benchmark of Perspective-Conditioned Spatial Reasoning[ACM MM (Accepted)]
 
 <img src="docs/resources/fig1.svg" width="90%"/>
 
